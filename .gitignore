@@ -1,0 +1,5 @@
+*/.local/*
+*/.config/*
+*/*.log
+*/.Rhistory
+*/.bash_history

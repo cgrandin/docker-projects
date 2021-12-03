@@ -1,7 +1,9 @@
 # Dockerfile for hake for the cloud
 
-FROM rocker/verse:latest
+FROM cgrandin/ss as ss
 LABEL maintainer = "chris.grandin@gmail.com"
+
+FROM rocker/verse:latest
 
 # Install Linux packages required to run INLA
 RUN apt-get update -qq && \
@@ -15,5 +17,10 @@ RUN apt-get update -qq && \
     libglpk40 \
     cargo
 
+COPY --from=ss /usr/bin/ss /usr/bin/ss
 COPY install_packages.R install_packages.R
 RUN Rscript install_packages.R
+
+ENV SS_HOME=$INST/ss
+ENV PATH=$SS_HOME:$PATH
+

@@ -5,10 +5,12 @@ ss_dir=$install_dir/ss
 
 cd $install_dir
 git clone --branch main https://github.com/nmfs-stock-synthesis/stock-synthesis ss
-# This is 2021's base model commit
-git checkout c6c91786a3066dd4adb770ba16ed23400a0cbb52
 cd $ss_dir
-
+# Checking out 2021's base model commit
+#git checkout c6c9178 # Commit where tag was changed to 3.30.16.03 (Oct 19, 2020)
+git checkout f65ff56 # Dec 15, 2020 (36 commits after change to 3.30.16.03)
+#git checkout 33108e9 # Dec 18, 2020
+#git checkout 02b927a # Dec 23, 2020
 cat \
 SS_versioninfo_330opt.tpl \
 SS_readstarter.tpl \

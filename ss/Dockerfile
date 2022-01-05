@@ -1,9 +1,7 @@
-# Docker script for csasdown containers
-#
-# This script was based loosely on this Dockerfile:
-# https://github.com/rocker-org/rocker-versioned/blob/master/verse/3.6.3.Dockerfile
+# Docker script for Stock Synthesis
+# Used to produce Docker image cgrandin/ss
+# https://hub.docker.com/repository/docker/cgrandin/ss
 
-# Base rocker/tidyverse image https://hub.docker.com/u/rocker/
 FROM cgrandin/admb:latest
 LABEL maintainer = "chris.grandin@gmail.com"
 

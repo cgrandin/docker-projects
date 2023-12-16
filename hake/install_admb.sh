@@ -74,9 +74,8 @@ ln -s libadmbo-x86_64-linux-g++9.a libadmbo.a || true
 ln -s libadmb-contrib-x86_64-linux-g++9.a libadmb-contrib.a || true
 ln -s libadmb-contribo-x86_64-linux-g++9.a libadmb-contribo.a || true
 
-cd $admb_dir
-
 # Build ad2csv
-cd contrib/ad2csv
+mkdir $admb_dir/build/ad2csv
+cd $admb_dir/contrib/ad2csv
 
-make -j 7
+make

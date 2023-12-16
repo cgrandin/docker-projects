@@ -2,12 +2,12 @@
 
 # Clone SS source and compile with optimization for ss docker image
 
-install_dir=/usr/bin
-ss_dir=$install_dir/ss3
+INSTALL_DIR=/usr/bin
+SS_DIR=$INSTALL_DIR/ss3
 
-cd $install_dir
-git clone --branch v3.30.22 https://github.com/nmfs-stock-synthesis/stock-synthesis $ss_dir
-cd $ss_dir
+cd $INSTALL_DIR
+git clone --branch v3.30.22 https://github.com/nmfs-stock-synthesis/stock-synthesis $SS_DIR
+cd $SS_DIR
 cat \
 SS_versioninfo_330opt.tpl \
 SS_readstarter.tpl \
@@ -31,5 +31,5 @@ SS_write_report.tpl \
 SS_ALK.tpl \
 SS_timevaryparm.tpl \
 SS_tagrecap.tpl > ss.tpl
-
+#
 admb -f ss
